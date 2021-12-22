@@ -390,7 +390,7 @@ func (gBed *GeoBed) loadDataSets() {
 }
 
 // When geocoding, this provides a scored best match.
-func (gBed *GeoBed) matchLocation(n string) GeobedCity {
+func (gBed *GeoBed) MatchLocation(n string) GeobedCity {
 	countryCode, usStateCode, abbrevSlice, nSlice := gBed.extractLocationPieces(n)
 	// Take the reamining unclassified pieces (those not likely to be abbreviations) and get our search range.
 	// These pieces are likely contain the city name. Narrowing down the search range will make the lookup faster.
