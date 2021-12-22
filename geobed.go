@@ -23,7 +23,7 @@ import (
 
 // A list of data sources.
 var dataSetFiles = []map[string]string{
-	{"url": "http://download.geonames.org/export/dump/cities1000.zip", "path": "./geobed-data/cities1000.zip", "id": "geonamesCities1000"},
+	{"url": "http://download.geonames.org/export/dump/cities500.zip", "path": "./geobed-data/cities500.zip", "id": "geonamesCities500"},
 	{"url": "http://download.geonames.org/export/dump/countryInfo.txt", "path": "./geobed-data/countryInfo.txt", "id": "geonamesCountryInfo"},
 }
 
@@ -252,7 +252,7 @@ var reTab = regexp.MustCompile("\t")
 func (gBed *GeoBed) loadDataSets() {
 	for _, dataSetEntry := range dataSetFiles {
 		// This one is zipped
-		if dataSetEntry["id"] == "geonamesCities1000" {
+		if dataSetEntry["id"] == "geonamesCities500" {
 			zipReader, err := zip.OpenReader(dataSetEntry["path"])
 			if err != nil {
 				log.Fatal(err)
